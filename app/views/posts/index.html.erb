@@ -1,6 +1,13 @@
 <h1>投稿記事一覧</h1>
 
+<%= link_to '新しい投稿', new_post_path %>
+
 
 <% @posts.each do |post| %>
-  <li><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
+    <li><a href="/posts/<%= post.id %>"><%= post.title %></a>
+    <%= link_to '編集', edit_post_path(post) %>
+    <%= link_to '削除', post_path(post),
+                  method: :delete, data: { confirm: '削除しますか？' } %>
+    </li>
+
 <% end %>
