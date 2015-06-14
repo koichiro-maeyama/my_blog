@@ -5,6 +5,9 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
   end
+  def index
+    @posts = Post.all
+  end
   def create
     #フォームからデータを受け取る
     @post = Post.new(post_params)
@@ -12,6 +15,16 @@ class PostsController < ApplicationController
     #show.html.erbに飛ばす
     redirect_to "/posts/#{@post.id}"
   end
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update_attributes(post_params)
+    redirect_to "/posts/#{@post.id}"
+  end
+
   private
   def post_params
     # params.require(:key).permit(:filter)

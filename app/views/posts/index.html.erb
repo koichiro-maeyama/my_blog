@@ -1,0 +1,6 @@
+<h1>投稿記事一覧</h1>
+
+
+<% @posts.each do |post| %>
+  <li><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
+<% end %>
