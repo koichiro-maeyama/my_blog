@@ -1,15 +1,21 @@
-<p>
-  <b>タイトル：<%= @post.title %></b>
-</p>
+<div class="col-md-12">
+  <p>
+    <b>タイトル：<%= @post.title %></b>
+  </p>
 
-<p>
-  <b>カテゴリー：<%= @post.category %></b>
-</p>
-<p>
-  <b>本文：<%= @post.body %></b>
-</p>
+  <p>
+    <b>カテゴリー：<%= @post.category %></b>
+  </p>
+  <p>
+    <b>投稿日：<%= @post.created_at %></b>
+  </p>
+  <hr>
+  <p>
+    <b>本文：<%= simple_format(@post.body) %></b>
+  </p>
 
-<hr>
-<%= link_to '編集する',edit_post_path %>
-<%= link_to '削除する',post_path,method: :delete , data: { confirm: '削除しますか？' } %>
-<%= link_to '戻る', posts_path %>
+  <hr>
+  <%= link_to '編集する',edit_post_path %>
+  <%= link_to '削除する',post_path,method: :delete , data: { confirm: '削除しますか？' } %>
+  <%= link_to '戻る', posts_path %>
+</div>

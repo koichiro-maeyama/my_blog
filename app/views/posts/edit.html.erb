@@ -1,14 +1,16 @@
-<h1>投稿記事編集フォーム</h1>
-<%= form_for @post, url: { action: :update } do |f| %>
-<p>タイトル：<br>
-  <%= f.text_field :title %>
-</p>
-<p>カテゴリー：<br>
-  <%= f.text_field :category %>
-</p>
-<p>本文：<br>
-  <%= f.text_area :body %>
-</p>
-<%= f.submit "編集する" %>
-<%= link_to '戻る', posts_path %>
-<% end %>
+<div class="col-md-12">
+  <h1>投稿記事編集フォーム</h1>
+  <%= form_for @post, url: { action: :update } do |f| %>
+  <p>タイトル：<br>
+    <%= f.text_field :title %>
+  </p>
+  <p>カテゴリー：<br>
+    <%= f.text_field :category %>
+  </p>
+  <p>本文：<br>
+    <%= f.text_area :body %>
+  </p>
+  <%= f.submit "編集する" %>
+  <%= link_to '戻る', posts_path %>
+  <% end %>
+</div>
