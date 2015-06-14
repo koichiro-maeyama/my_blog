@@ -5,21 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-Post.create(
-  title: "エアマックス 95",
-  body: "1995年のランニングマックスモデルの復刻版。時代を席巻した名モデルAIR MAX 95。当時は斬新でハイテクなルックスがストリートのファッションシーンを席巻しました。",
-  category: "靴"
-)
-
-Post.create(
-  title: "エアマックス 96",
-  body: "1996年のランニングマックスモデルの復刻版。時代を席巻した名モデルAIR MAX 96。当時は斬新でハイテクなルックスがストリートのファッションシーンを席巻しました。",
-  category: "靴"
-)
-
-Post.create(
-  title: "エアマックス 97",
-  body: "1997年のランニングマックスモデルの復刻版。時代を席巻した名モデルAIR MAX 97。当時は斬新でハイテクなルックスがストリートのファッションシーンを席巻しました。",
-  category: "靴"
-)
+Category.create(title: '日々')
+Category.create(title: '未整理')
+Category.create(title: 'Rails')
