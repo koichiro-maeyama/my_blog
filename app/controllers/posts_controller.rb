@@ -7,7 +7,10 @@ class PostsController < ApplicationController
     #@post = Post.find(params[:id])
   end
   def index
-    @posts = Post.all
+    #@posts = Post.page(params[:page]).per(2)
+    #@posts = Post.all
+    @q = Post.search(params[:q])
+    @posts = @q.result.page(params[:page])
   end
   def create
     #フォームからデータを受け取る

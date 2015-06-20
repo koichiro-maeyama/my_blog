@@ -1,4 +1,33 @@
 <h1>ひとり交換日記</h1>
+
+<%= search_form_for @q do |f| %>
+<div class="row">
+    <div class="col-sm-3 col-xs-12">
+      <div class="form-group">
+        <%= f.label :title, 'タイトル' %>
+        <%= f.search_field :title_cont, class: "form-control input-sm" %>
+      </div>
+    </div>
+    <div class="col-sm-3 col-xs-12">
+      <div class="form-group">
+        <%= f.label :body, '本文' %>
+        <%= f.search_field :body_cont, class: "form-control input-sm" %>
+      </div>
+    </div>
+    <div class="col-sm-3 col-xs-12">
+      <div class="form-group">
+        <%= f.label :category, 'カテゴリ' %>
+        <%= f.search_field :category_cont, class: "form-control input-sm" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <%= f.submit "検索", class: "btn btn-default" %>
+    </div>
+  </div>
+<% end %>
+
 <div class="col-md-8">
 <% @posts.each do |post| %>
     <div class="article">
@@ -13,7 +42,9 @@
       </p>
     </div>
   <% end %>
+  <%= paginate @posts %>
 </div>
+
 
 <div class="col-md-4">
   <div class="thumbnail">
@@ -24,7 +55,6 @@
       <p><%= author.description %></p>
     </div>
   </div>
-
   <div class="list-group">
   <% @posts.each_with_index do |post, index| %>
       <%# ６個目以上の記事の場合はBreak（each文をその場で終わらせる） %>
@@ -37,3 +67,4 @@
     <% end %>
   </div>
 </div>
+
