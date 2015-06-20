@@ -4,7 +4,7 @@
   </p>
 
   <p>
-    <b>カテゴリー：<%= @post.category %></b>
+    <b>カテゴリー：<%= find_category_title(@post.category_id) %></b>
   </p>
   <p>
     <b>投稿日：<%= @post.created_at %></b>

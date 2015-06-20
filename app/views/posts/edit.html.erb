@@ -4,12 +4,14 @@
   <p>タイトル：<br>
     <%= f.text_field :title %>
   </p>
-  <p>カテゴリー：<br>
-    <%= f.text_field :category %>
-  </p>
-  <p>本文：<br>
-    <%= f.text_area :body %>
-  </p>
+  <div class="form-group">
+     <%= f.label "カテゴリ" %>
+     <%= f.collection_select(:category_id, Category.all, :id, :title, class: "form-control") %>
+   </div>
+   <div class="form-group">
+     <%= f.label "本文" %>
+     <%= f.text_area :body, class: "form-control" %>
+   </div>
   <%= f.submit "編集する" %>
   <%= link_to '戻る', posts_path %>
   <% end %>
