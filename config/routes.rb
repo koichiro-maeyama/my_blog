@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :writers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   resources :posts
+  root 'posts#index'
 
   # get 'posts/new' => 'posts#new'
   # get 'posts/:id' => 'posts#show'
@@ -16,7 +18,6 @@ Rails.application.routes.draw do
   # patch '/posts/:id' => 'posts#update'
   # post '/posts/:id/destroy' => 'posts#destroy'
 
-  root 'post#index'
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
